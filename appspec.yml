@@ -4,19 +4,71 @@ files:
   - source: /
     destination: /home/ec2-user/my-app/aws-node
 hooks:
-# ApplicationStop:
-# DownloadBundle:
-#  BeforeInstall:
-#    - location: scripts/before_install.sh
-#      timeout: 300
-#      runas: root
-# Install:
+  ApplicationStop:
+    - location: scripts/application_stop.sh
+      timeout: 300
+      runas: root
+
+  DownloadBundle:
+    - location: scripts/download_bundle.sh
+      timeout: 300
+      runas: root
+
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 300
+      runas: root
+
+  Install:
+    - location: scripts/install.sh
+      timeout: 300
+      runas: root
+
   AfterInstall:
     - location: scripts/after_install.sh
       timeout: 300
       runas: root
+      
   ApplicationStart:
     - location: scripts/application_start.sh
       timeout: 300
       runas: root
-# ValidateService:
+
+  ValidateService:
+    - location: scripts/validate_service.sh
+      timeout: 300
+      runas: root
+
+  BeforeBlockTraffic:
+    - location: scripts/before_block_traffic.sh
+      timeout: 300
+      runas: root
+
+  BlockTraffic:
+    - location: scripts/block_traffic.sh
+      timeout: 300
+      runas: root
+
+  AfterBlockTraffic:
+    - location: scripts/after_block_traffic.sh
+      timeout: 300
+      runas: root
+
+  BeforeAllowTraffic:
+    - location: scripts/before_allow_traffic.sh
+      timeout: 300
+      runas: root
+
+  AllowTraffic:
+    - location: scripts/allow_traffic.sh
+      timeout: 300
+      runas: root
+
+  AfterAllowTraffic:
+    - location: scripts/after_allow_traffic.sh
+      timeout: 300
+      runas: root
+
+
+
+

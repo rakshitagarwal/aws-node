@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 
 app.get('/post', function (req, res) {
    res.writeHead(200, {'Content-Type': 'application/json'});
-   var response = { "response" : "Post method calling Brooooo!!!" }
+   var response = { "response" : "Post method calling using CodeDeploy!!!" }
    console.log(response);
    res.end(JSON.stringify(response));
 })

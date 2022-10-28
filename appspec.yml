@@ -21,54 +21,20 @@ hooks:
 
   Install:
     - location: scripts/install.sh
-      timeout: 300
+      timeout: 900
       runas: root
 
   AfterInstall:
     - location: scripts/after_install.sh
-      timeout: 300
+      timeout: 900
       runas: root
       
   ApplicationStart:
     - location: scripts/application_start.sh
-      timeout: 300
+      timeout: 900
       runas: root
 
   ValidateService:
     - location: scripts/validate_service.sh
-      timeout: 300
+      timeout: 900
       runas: root
-
-  BeforeBlockTraffic:
-    - location: scripts/before_block_traffic.sh
-      timeout: 300
-      runas: root
-
-  BlockTraffic:
-    - location: scripts/block_traffic.sh
-      timeout: 300
-      runas: root
-
-  AfterBlockTraffic:
-    - location: scripts/after_block_traffic.sh
-      timeout: 300
-      runas: root
-
-  BeforeAllowTraffic:
-    - location: scripts/before_allow_traffic.sh
-      timeout: 300
-      runas: root
-
-  AllowTraffic:
-    - location: scripts/allow_traffic.sh
-      timeout: 300
-      runas: root
-
-  AfterAllowTraffic:
-    - location: scripts/after_allow_traffic.sh
-      timeout: 300
-      runas: root
-
-
-
-
